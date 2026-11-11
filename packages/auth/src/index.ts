@@ -31,7 +31,7 @@ export function createAuth(
 				httpOnly: true,
 			},
 			cookiePrefix: "math",
-			// crossSubDomainCookies: { enabled: true },
+			crossSubDomainCookies: { enabled: true, domain: "math-api.tajhans.com" },
 		},
 		plugins: [username({ displayUsername: false })],
 	});
