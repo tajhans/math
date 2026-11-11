@@ -5,17 +5,19 @@ import { db } from "./services";
 import { auth } from "./services";
 
 export type CreateContextOptions = {
-  context: ElysiaContext;
+	context: ElysiaContext;
 };
 
-export async function createContext({ context }: CreateContextOptions): Promise<ApiContext> {
-  const session = await auth.api.getSession({
-    headers: context.request.headers,
-  });
-  return {
-    db,
-    session,
-  };
+export async function createContext({
+	context,
+}: CreateContextOptions): Promise<ApiContext> {
+	const session = await auth.api.getSession({
+		headers: context.request.headers,
+	});
+	return {
+		db,
+		session,
+	};
 }
 
 export type Context = Awaited<ReturnType<typeof createContext>>;
