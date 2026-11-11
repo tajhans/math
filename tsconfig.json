@@ -1,0 +1,3 @@
+{
+  "extends": "@math/config/tsconfig.base.json"
+}
