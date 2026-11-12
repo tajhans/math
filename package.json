@@ -24,6 +24,9 @@
 		}
 	},
 	"type": "module",
+	"varlock": {
+		"loadPath": "./apps/server/"
+	},
 	"scripts": {
 		"dev": "turbo run dev",
 		"build": "turbo run build",

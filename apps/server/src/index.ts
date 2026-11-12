@@ -8,8 +8,8 @@ import { ZodToJsonSchemaConverter } from "@orpc/zod/zod4";
 import { Elysia } from "elysia";
 import { initLogger } from "evlog";
 import {
-	createAuthMiddleware,
 	type BetterAuthInstance,
+	createAuthMiddleware,
 } from "evlog/better-auth";
 import { evlog } from "evlog/elysia";
 import { createFsDrain } from "evlog/fs";
@@ -47,7 +47,7 @@ const identifyUser = createAuthMiddleware(auth as BetterAuthInstance, {
 	maskEmail: true,
 });
 
-new Elysia()
+const app = new Elysia()
 	.use(
 		evlog({
 			drain:
@@ -99,7 +99,12 @@ new Elysia()
 			parse: "none",
 		},
 	)
-	.get("/", () => "OK")
-	.listen(3000, () => {
+	.get("/", () => "OK");
+
+export default app;
+
+if (!process.env.VERCEL) {
+	app.listen(3000, () => {
 		console.log("Server is running on http://localhost:3000");
 	});
+}

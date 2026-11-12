@@ -1,13 +1,23 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"bunVersion": "1.x",
 	"services": {
 		"server": {
 			"root": "apps/server",
-			"framework": "elysia"
+			"framework": "elysia",
+			"entrypoint": "src/index.ts",
+			"installCommand": "cd ../.. && bun install",
+			"buildCommand": "bun run env:generate && bun run check-types",
+			"functions": {
+				"src/index.ts": {
+					"includeFiles": "{package.json,apps/server/.env.schema,node_modules/.bin/varlock,node_modules/varlock/**}"
+				}
+			}
 		},
 		"web": {
 			"root": "apps/web",
-			"framework": "vite"
+			"framework": "vite",
+			"installCommand": "cd ../.. && bun install"
 		}
 	},
 	"rewrites": [
