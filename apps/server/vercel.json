@@ -3,10 +3,5 @@
 	"framework": "elysia",
 	"bunVersion": "1.x",
 	"installCommand": "cd ../.. && bun install",
-	"buildCommand": "bun run env:generate && bun run check-types",
-	"functions": {
-		"src/index.ts": {
-			"includeFiles": "{package.json,.env.schema,node_modules/varlock/**}"
-		}
-	}
+	"buildCommand": "bun run env:generate && bun run check-types"
 }
