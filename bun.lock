@@ -158,6 +158,9 @@
       },
     },
   },
+  "patchedDependencies": {
+    "@libsql/isomorphic-ws@0.1.5": "patches/@libsql%2Fisomorphic-ws@0.1.5.patch",
+  },
   "catalog": {
     "@orpc/client": "^1.15.6",
     "@orpc/openapi": "^1.15.6",

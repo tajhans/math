@@ -1,0 +1,21 @@
+diff --git a/package.json b/package.json
+index b8e80dc915001d7d344a86511b1b963b91a9968a..90f58ab22f8f5ab04ae27f599d8a38dff35ba2b6 100644
+--- a/package.json
++++ b/package.json
+@@ -19,14 +19,14 @@
+   "exports": {
+     ".": {
+       "import": {
+-        "bun": "./web.mjs",
++        "bun": "./node.mjs",
+         "deno": "./web.mjs",
+         "workerd": "./web.mjs",
+         "node": "./node.mjs",
+         "default": "./web.mjs"
+       },
+       "require": {
+-        "bun": "./web.cjs",
++        "bun": "./node.cjs",
+         "deno": "./web.cjs",
+         "workerd": "./web.cjs",
+         "node": "./node.cjs",

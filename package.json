@@ -54,5 +54,8 @@
 		"typescript": "catalog:",
 		"varlock": "catalog:"
 	},
-	"packageManager": "bun@1.4.0"
+	"packageManager": "bun@1.4.0",
+	"patchedDependencies": {
+		"@libsql/isomorphic-ws@0.1.5": "patches/@libsql%2Fisomorphic-ws@0.1.5.patch"
+	}
 }
